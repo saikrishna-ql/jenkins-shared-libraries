@@ -29,7 +29,7 @@ def call(Map config = [:]) {
             sed -i "s|image: saikrishnaqlabs/stratefai-app:.*|image: saikrishnaqlabs/stratefai-app:${imageTag}|g" ${manifestsPath}/stratefai-deployment.yaml
             
             # Ensure ingress is using the correct domain
-            if [ -f "${manifestsPath}/10-ingress.yaml" ]; then
+            if [ -f "${manifestsPath}/ingress.yaml" ]; then
                 sed -i "s|host: .*|host: demo.stratefai.com|g" ${manifestsPath}/ingress.yaml
             fi
             
